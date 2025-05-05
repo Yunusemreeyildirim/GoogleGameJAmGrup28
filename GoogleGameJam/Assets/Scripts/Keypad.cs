@@ -11,6 +11,7 @@ public class Keypad : MonoBehaviour
     [SerializeField] private GameObject keypadPanel;
     [SerializeField] private GameObject doorToOpen;
     public Animator doorAnimator;
+    public AudioSource audioSource;
 
 
     public void Number(int number)
@@ -67,10 +68,12 @@ public class Keypad : MonoBehaviour
             if (correctPassword=="847540")
             {
                 doorAnimator.SetTrigger("doorOpen"); // Animator'daki "Open" trigger'ýný tetikle
+                audioSource.Play();
             }
             if (correctPassword == "13698")
             {
                 doorAnimator.SetTrigger("isRock");
+                audioSource.Play();
             }
              // Animator'daki "Open" trigger'ýný tetikle
         }
